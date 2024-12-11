@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: customer-api
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/customer_service
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+    parameters:
+      key: LiquibaseWithSpringBoot
+
+logging:
+  level:
+    root: INFO
+    com.example.customer.customerDemo: DEBUG
+  file:
+    name: logs/app.log
