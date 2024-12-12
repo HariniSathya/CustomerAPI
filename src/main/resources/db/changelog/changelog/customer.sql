@@ -1,5 +1,5 @@
 -- changeset Harini:1
-CREATE TABLE customer1 (
+CREATE TABLE customer (
     id                  VARCHAR(36) NOT NULL PRIMARY KEY,
     first_name          VARCHAR(255) NOT NULL,
     middle_name         VARCHAR(255) ,
